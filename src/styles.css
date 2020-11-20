@@ -1,0 +1,59 @@
+@import "~bootstrap/dist/css/bootstrap.css";
+
+body {
+    width: 100vw;
+    height: 100vh;
+    /* overflow-x: hidden; */
+    overflow-y: hidden;
+    padding: 0px;
+    margin: 0px;
+}
+
+.buttonToggle {
+    background-color: transparent;
+    border-radius: 5px;
+    box-shadow: none !important;
+    color: white;
+}
+
+
+
+.buttonToggle:hover {
+    background-color: #1b81be;
+    color: #f1f1f1;
+}
+
+img {
+    width: 50px;
+    height: 50px;
+   
+}
+.HeaderStyle{
+    border-bottom: 1px solid #d1cfdf;
+    background-color: #1b81be;
+    text-align: center;
+}
+.ContenidoHeader{
+    /* background-color: #1B81BE; */
+    color: white;
+    font-size: 14px;
+    /* font-family: "Segoe UI"; */
+    font-weight: bolder;
+    text-align: center;
+    padding-right: none !important;
+    margin-right: none !important;
+
+}
+.HeaderStyle H5{
+    color: white;
+}
+
+.ColorFondoGeneral{
+    background-color: #f1f1f1;
+}
+
+.pruebaHome{
+    height: 100px;
+    width: 100px;
+    background-color: dodgerblue;
+}

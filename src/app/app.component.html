@@ -1,0 +1,39 @@
+ <!-- Container for sidebar(s) + page content -->
+ <ng-sidebar-container class="ColorFondoGeneral">
+ 
+  <!-- A sidebar -->
+  <ng-sidebar [(opened)]="_opened" [(mode)]="sidebarMode">
+    <div class="container-fluid" *ngIf="_opened">
+      <div class="col-12 text-center mt-3">  
+           <img src="../assets/img/loguito3.png" alt="CLAVISCO">
+          <h5 class="pb-2 border-bottom">  
+          </h5>      
+      </div>
+      <div class="row">
+        <div class="col-12" *ngFor="let option of menu" (click)="onClickMenuOption(option)">
+          <div class="py-2 px-2 menu-option" [ngClass]="{'menu-option-selected': option.Selected}">
+            <i class="mr-1 fa-lg mr-4" [ngClass]="[option.Icon]"></i>{{option.Name}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-sidebar>
+
+  <!-- Page content -->
+  <div ng-sidebar-content>
+    <div class="container-fluid p-0 ">
+      <app-header></app-header> 
+      <div id="router-outlet-container" class="pb-1 pt-3 "
+        [ngClass]="{'outlet-container-padding': !_opened, 'px-5': _opened}">
+        <router-outlet></router-outlet>
+      </div>
+      <app-footer></app-footer>
+    </div>
+
+ 
+
+     
+  </div>
+
+</ng-sidebar-container>
+

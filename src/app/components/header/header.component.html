@@ -1,0 +1,21 @@
+<header class="row header sticky-top m-0 HeaderStyle">
+    <div class="col-md-4">
+        <div class="row">
+            <button type="button" class="btn buttonToggle" (click)="toggleSidebar()">
+                <i class="fa fa-bars fa-lg"
+                 aria-hidden="true"></i></button>
+            <div class="pt-1"> 
+                <h5 class="mt-2">{{sectionService.currentSection}}</h5>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-8 ContenidoHeader mt-2">   
+        <div class="float-right">    
+            <!-- <div class="col-12 row justify-content-center text-right ContenidoHeader"style="background-color: yellow;">                 -->
+                    <span>Estado: </span> <span style="color: springgreen;">Conectado</span>&nbsp;&nbsp;
+                    <span>Usuario Conectado: </span> <span>Maria Mena Mora</span>&nbsp;&nbsp;
+                    <span>Tipo de Cambio: ₡604.05</span>   &nbsp;
+                </div>             
+       
+    </div>
+</header>

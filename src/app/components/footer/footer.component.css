@@ -1,0 +1,11 @@
+.bg-dark {
+    background-color: #F1F1F1 !important;
+}
+
+.clavisco-footer {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    color: #979797;
+    font-size: 15px;
+    font-weight: 400;
+    margin: 0;
+}

@@ -1,0 +1,68 @@
+ng-sidebar-container {
+    width: 100vw;
+    height: 100vh;
+    /* overflow-x: hidden; */
+}
+
+:host>>>div.ng-sidebar__content {
+    width: 100vw;
+    max-width: 100vw;
+    height: 100vh;
+    max-height: 100vh;
+    /* overflow-x: hidden; */
+}
+
+:host>>>aside.ng-sidebar--opened {
+    /* background-color: #75c594; */
+    background-color: #1b81be;
+    color: white;
+    overflow-x: hidden;
+    width: 300px !important;
+    position: absolute;
+    /* box-shadow: 1px 0px 5px 0px rgba(0, 0, 0, 0.3); */
+}
+
+#router-outlet-container {
+    width: 100%;
+    background-color: white;
+}
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .outlet-container-padding {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .outlet-container-padding {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    .outlet-container-padding {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .outlet-container-padding {
+        padding-left: 100px;
+        padding-right: 100px;
+    }
+}
+
+#sidebarTitle {
+    height: 55px;
+}
+
+.menu-option {
+    cursor: pointer;
+}
+
+.menu-option-selected, .menu-option:hover {
+    background-color: #2f4475; 
+}
