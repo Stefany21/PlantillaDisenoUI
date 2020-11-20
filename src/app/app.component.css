@@ -17,7 +17,7 @@ ng-sidebar-container {
     background-color: #1b81be;
     color: white;
     overflow-x: hidden;
-    width: 300px !important;
+    width: 330px !important;
     position: absolute;
     /* box-shadow: 1px 0px 5px 0px rgba(0, 0, 0, 0.3); */
 }

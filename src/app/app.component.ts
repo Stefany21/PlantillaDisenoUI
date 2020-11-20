@@ -11,6 +11,7 @@ export class AppComponent {
    _opened: boolean = false;
   sidebarMode = 'push';
   menu = Menu;
+  
 
 
   constructor(private router: Router,
@@ -28,7 +29,7 @@ export class AppComponent {
       option.Selected = true;
       this.router.navigateByUrl(option.Path);
     }
-  }
+  }  
 }
 
 export const Menu = [
@@ -54,7 +55,39 @@ export const Menu = [
     Name: 'Inventario',
     Path: 'items',
     Icon: 'fas fa-list',
-    Selected: false
+    Selected: false,
+    SubMenu: [
+      {
+        name: 'Datos maestros de inventario',
+        icon: 'fas fa-receipt',
+        url: '/items',
+      },
+      {
+        name: 'Ordenes de Compra',
+        icon: 'fas fa-sticky-note',
+        url: '/purchaseorder',
+      },
+      {
+        name: 'Entrada de mercaderia',
+        icon: 'fas fa-tasks',
+        url: '/goodReceipt'
+      },
+      {
+        name: 'Devolución de mercaderia',
+        icon: 'fas fa-table',
+        url: '/returnGood'
+      },
+      {
+        name: 'Entrada de inventario',
+        icon: 'fas fa-indent',
+        url: '/goodsReceiptInv'
+      },
+      {
+        name: 'Salida de inventario',
+        icon: 'fas fa-outdent',
+        url: '/goodsIssueInv'
+      }
+    ]
   },
   {
     Name: 'Ventas',
