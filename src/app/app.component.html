@@ -16,8 +16,8 @@
 
           </div> 
           <div *ngIf="option.Selected && showsubMenu" class="col-12" (click)="onClicksubMenuOption(option)">
-            <div class="py-2 px-2 submenu-option" *ngFor="let option of option.SubMenu"  [ngClass]="{'submenu-option-selected': option.Selected}">
-            <i class="mr-1 fa-lg mr-4" [ngClass]="[option.icon]"></i>{{option.name}}
+            <div class="py-2 px-2 menu-option" *ngFor="let option of option.SubMenu"  [ngClass]="{'menu-option-selected': option.Selected}">
+            <i class="fa-lg mr-4" [ngClass]="[option.icon]"></i>{{option.name}}
             </div>
           </div>           
         </div>     
