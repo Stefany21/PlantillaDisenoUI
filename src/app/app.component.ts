@@ -11,6 +11,9 @@ export class AppComponent {
    _opened: boolean = false;
   sidebarMode = 'push';
   menu = Menu;
+  showsubMenu = false;
+  
+
   
 
 
@@ -28,8 +31,42 @@ export class AppComponent {
     } else {
       option.Selected = true;
       this.router.navigateByUrl(option.Path);
+      if(option.SubMenu){
+        this.showsubMenu = !this.showsubMenu;
+      
+      }
     }
   }  
+  
+  onClicksubMenuOption(option: any) {
+    // option.SubMenu.forEach(x => {
+    //   x.Selected = false;
+
+    // });
+        
+  
+  
+    this.menu.forEach(x => x.Selected = false);
+    if (option.Name === 'Salir') {
+
+    } else {
+      option.Selected = true;    
+      this.router.navigateByUrl(option.Path);
+      if(option.SubMenu){
+        this.showsubMenu = !this.showsubMenu;
+        option.SubMenu.forEach(x=> {
+          x.Selected = false;
+          if(1==1){
+
+            option.SubMenu.Selected = true;
+          }
+        });
+        
+       
+      }
+    }
+  
+  }
 }
 
 export const Menu = [
@@ -99,7 +136,49 @@ export const Menu = [
     Name: 'Documentos',
     Path: 'items',
     Icon: 'fa fa-file',
-    Selected: false
+    Selected: false,
+    SubMenu: [
+      {
+        name: 'Inventario',
+        icon: 'fas fa-warehouse',
+        url: '/inventory',
+      },
+      {
+        name: 'Orden de venta',
+        icon: 'fas fa-shopping-cart',
+        url: '/so',
+      },
+      {
+        name: 'Cotización',
+        icon: 'fas fa-cart-arrow-down',
+        url: '/quotation',
+      },
+      {
+        name: 'Consulta de artículos',
+        icon: 'fas fa-tag',
+        url: '/info',
+      },
+      {
+        name: 'Facturación',
+        icon: 'fas fa-receipt',
+        url: '/invo',
+      },
+      {
+        name: 'Nota de crédito',
+        icon: 'fas fa-table',
+        url: '/invonc',
+      },
+      {
+        name: 'Facturación Proveedor',
+        icon: 'fas fa-receipt',
+        url: '/invoiceSupplier',
+      },
+      {
+        name: 'Reimpresión',
+        icon: 'fas fa-print',
+        url: '/print',
+      },
+    ]
   },
   {
     Name: 'Salir',
