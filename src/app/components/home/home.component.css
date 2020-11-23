@@ -1,8 +1,40 @@
-.Home{
-  /* max-height: 540px;  */
-  height: 30px;
-  background-color:white;
+.contentTable {
+  padding-top: 2px !important;
+  padding-left: 4px !important;
+  padding-bottom: 4px !important;
+  padding-right: 4px!important;
+  background-color:transparent;
   border-radius: 5px;
-  border: 1px solid #d1cfdf;
+  /* // border-top: 1px solid #d1cfdf;
+  //border-right: 1px solid #d1cfdf;
+  //border-bottom: 1px solid #d1cfdf;
+  //border-left: 1px solid #d1cfdf; */
+}
 
+.tableSubtotales {
+  padding-top: 4px !important;
+  padding-left: 4px !important;
+  padding-bottom: 8px !important;
+  padding-right: 4px!important;
+  
+  /* // border: 1px solid #d1cfdf;
+  //background-color: thistle; */
+}
+.FontTotales label a {
+  font-size: 13px;
+  text-align: center;
+  color: #1B81BE;
+  font-weight: 900;
+  margin: 0px;
+}
+
+.FontTotales input {
+ font-size: 40px;
+  text-align: center;
+  background-color:#1B81BE;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-family: "Segoe UI Regular";
+  height: 150px;
 }

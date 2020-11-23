@@ -25,47 +25,62 @@ export class AppComponent {
  
 
   onClickMenuOption(option: any) {
+    // console.log(option);
     this.menu.forEach(x => x.Selected = false);
     if (option.Name === 'Salir') {
-
     } else {
       option.Selected = true;
       this.router.navigateByUrl(option.Path);
       if(option.SubMenu){
         this.showsubMenu = !this.showsubMenu;
+
+      // option.SubMenu.forEach(x=> {
+      //     x.Selected = false;
+      //     console.log("big");
+      // });
+    }
       
-      }
     }
   }  
-  
+  prueba(option: any){
+    
+    this.showsubMenu = !this.showsubMenu;
+    option.Selected = !option.Selected;
+    console.log(option);
+    console.log("div int");
+
+  }
   onClicksubMenuOption(option: any) {
+    console.log("div afuera");
+    // option.SubMenu.forEach(x=> {
+    //   console.log("div afuera");
+    //       x.Selected = false;
+    //   });
+    // console.log(option);
+    // option.Selected = true;
+    
     // option.SubMenu.forEach(x => {
     //   x.Selected = false;
 
-    // });
-        
-  
-  
-    this.menu.forEach(x => x.Selected = false);
-    if (option.Name === 'Salir') {
+  //   // });
+  // this.menu.forEach(x => x.Selected = false);
+  //   if (option.Name === 'Salir') {
+  //   } else {
+  //     option.Selected = true;    
+  //     this.router.navigateByUrl(option.Path);
+  //     if(option.SubMenu){
 
-    } else {
-      option.Selected = true;    
-      this.router.navigateByUrl(option.Path);
-      if(option.SubMenu){
-        this.showsubMenu = !this.showsubMenu;
-        option.SubMenu.forEach(x=> {
-          x.Selected = false;
-          if(1==1){
-
-            option.SubMenu.Selected = true;
-          }
-        });
-        
+  //       this.showsubMenu = !this.showsubMenu;
+  //       option.SubMenu.forEach(x=> {
+  //         x.Selected = false;
+  //         if(1==1){
+  //           //x.Selected = true;
+  //         //  option.SubMenu.Selected = true;
+  //         }
+  //       });      
        
-      }
-    }
-  
+  //     }
+  //   }  
   }
 }
 
@@ -97,32 +112,38 @@ export const Menu = [
       {
         name: 'Datos maestros de inventario',
         icon: 'fas fa-receipt',
-        url: '/items',
+        Path: '/items',
+        Selected: false
       },
       {
         name: 'Ordenes de Compra',
         icon: 'fas fa-sticky-note',
-        url: '/purchaseorder',
+        Path: '/purchaseorder',
+        Selected: false
       },
       {
         name: 'Entrada de mercaderia',
         icon: 'fas fa-tasks',
-        url: '/goodReceipt'
+        Path: '/goodReceipt',
+        Selected: false
       },
       {
         name: 'Devolución de mercaderia',
         icon: 'fas fa-table',
-        url: '/returnGood'
+        Path: '/returnGood',
+        Selected: false
       },
       {
         name: 'Entrada de inventario',
         icon: 'fas fa-indent',
-        url: '/goodsReceiptInv'
+        Path: '/goodsReceiptInv',
+        Selected: false
       },
       {
         name: 'Salida de inventario',
         icon: 'fas fa-outdent',
-        url: '/goodsIssueInv'
+        Path: '/goodsIssueInv',
+        Selected: false
       }
     ]
   },
@@ -141,42 +162,50 @@ export const Menu = [
       {
         name: 'Inventario',
         icon: 'fas fa-warehouse',
-        url: '/inventory',
+        Path: 'home',
+        Selected: false
       },
       {
         name: 'Orden de venta',
         icon: 'fas fa-shopping-cart',
-        url: '/so',
+        Path: '/so',
+        Selected: false
       },
       {
         name: 'Cotización',
         icon: 'fas fa-cart-arrow-down',
-        url: '/quotation',
+        Path: '/quotation',
+        Selected: false
       },
       {
         name: 'Consulta de artículos',
         icon: 'fas fa-tag',
-        url: '/info',
+        Path: '/info',
+        Selected: false
       },
       {
         name: 'Facturación',
         icon: 'fas fa-receipt',
-        url: '/invo',
+        Path: '/invo',
+        Selected: false
       },
       {
         name: 'Nota de crédito',
         icon: 'fas fa-table',
-        url: '/invonc',
+        Path: '/invonc',
+        Selected: false
       },
       {
         name: 'Facturación Proveedor',
         icon: 'fas fa-receipt',
-        url: '/invoiceSupplier',
+        Path: '/invoiceSupplier',
+        Selected: false
       },
       {
         name: 'Reimpresión',
         icon: 'fas fa-print',
-        url: '/print',
+        Path: '/print',
+        Selected: false
       },
     ]
   },

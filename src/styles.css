@@ -46,7 +46,7 @@ img {
    
     color: white;
     font-size: 14px;
-    font-weight: bolder;
+    font-family: "Segoe UI Regular";
 
     /*Caro*/
     /* color: #979797; */
@@ -55,7 +55,7 @@ img {
 }
 .HeaderStyle H5{
     color: white;
-
+font-family:"Segoe UI Regular";
     /*Caro*/
     /* color: #1b81be; */
 }
