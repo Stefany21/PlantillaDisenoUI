@@ -8,14 +8,11 @@ import { SidebarService} from '../app/services/sidebar.service';
 })
 export class AppComponent {
   title = 'ClvsPlantillaDisenoUI';
-   _opened: boolean = false;
+   _opened = false;
   sidebarMode = 'push';
   menu = Menu;
   showsubMenu = false;
-  
-
-  
-
+  dock = false;
 
   constructor(private router: Router,
     private sidebarService: SidebarService){
@@ -23,7 +20,9 @@ export class AppComponent {
   }
   openedChange($event) { }
  
-
+  _toggleDock() {
+    this.dock = !this.dock;
+  }
   onClickMenuOption(option: any) {
     // console.log(option);
     this.menu.forEach(x => x.Selected = false);

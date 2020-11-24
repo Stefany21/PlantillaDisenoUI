@@ -2,7 +2,7 @@
  <ng-sidebar-container class="ColorFondoGeneral">
  
   <!-- A sidebar -->
-  <ng-sidebar [(opened)]="_opened" [(mode)]="sidebarMode">
+  <ng-sidebar [(opened)]="_opened" [(mode)]="sidebarMode" [dock]="dock" [dockedSize]="'60px'">
     <div class="container-fluid" *ngIf="_opened">
       <div class="col-12 text-center mt-3">  
            <img src="../assets/img/loguito3.png" alt="CLAVISCO">
@@ -20,19 +20,39 @@
             <i class="fa-lg mr-3" [ngClass]="[optionsubmenu.icon]"></i>{{optionsubmenu.name}}
             </div>
           </div>           
-        </div>     
-      
-        
+        </div> 
+       </div>
+    </div>
+    <div class="container-fluid" *ngIf="dock">    
+      <div class="row text-left mt-3">  
+           <img src="../assets/img/loguito3.png" alt="CLAVISCO" style="height: 40px; width: 45px; padding-left: 5px;">
+          <!-- <h5 class="pb-2 border-bottom">  
+          </h5>       -->
       </div>
+      <div class="row text-left">
+        <div class="col-12" *ngFor="let option of menu" (click)="onClickMenuOption(option)">
+          <div class="py-2">
+            <i class="fa-lg mr-3" [ngClass]="[option.Icon]"></i>       
+
+          </div> 
+          <div *ngIf="option.Selected && showsubMenu" class="text-left">
+            <div class="py-2 text-left" *ngFor="let optionsubmenu of option.SubMenu"(click)="prueba(optionsubmenu)">
+            <i class="fa-lg mr-3" [ngClass]="[optionsubmenu.icon]"></i>
+            </div>
+          </div>           
+        </div> 
+       </div>
     </div>
   </ng-sidebar>
-
   <!-- Page content -->
   <div ng-sidebar-content>
+   
     <div class="container-fluid p-0 ColorFondoGeneral" >
       <app-header></app-header> 
       <div id="router-outlet-container" class="pb-1 pt-2"
+      
         [ngClass]="{'outlet-container-padding': !_opened, 'px-2': _opened}">
+        <button class="" (click)="_toggleDock()">dock ({{dock}})</button>
         <router-outlet></router-outlet>
       </div>
       <app-footer></app-footer>

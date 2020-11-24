@@ -8,7 +8,7 @@ import { SectionService } from "src/app/services/section.service";
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  _opened: boolean = false;
+  _opened: boolean;
   sidebarMode = 'push';
   sidebarState: boolean;
   constructor(private sidebarService: SidebarService,
