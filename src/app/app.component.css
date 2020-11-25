@@ -1,3 +1,4 @@
+/*Style Sidebar*/
 ng-sidebar-container {
     width: 100vw;
     height: 100vh;
@@ -24,7 +25,7 @@ ng-sidebar-container {
 
 #router-outlet-container {
     width: 100%;
-    background-color: #f1f1f1;
+    background-color: white;
 }
 
 @media (min-width: 576px) and (max-width: 767.98px) {
@@ -66,10 +67,9 @@ ng-sidebar-container {
 .menu-option-selected, .menu-option:hover {
     background-color: #2f4475; 
 }
+/*End Style Sidebar*/
 
-
-
-
+/*Style Docked*/
 :host>>>aside.ng-sidebar--docked {
     background-color: #1b81be;
     color: white;
@@ -80,4 +80,8 @@ ng-sidebar-container {
     border: none !important;
     max-width: 60px !important;
   }
+  .SizeIcon{
+      font-size: 20px;
+  }
+  /*End Style Docked*/
 

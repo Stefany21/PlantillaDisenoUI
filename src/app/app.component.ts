@@ -8,24 +8,21 @@ import { SidebarService} from '../app/services/sidebar.service';
 })
 export class AppComponent {
   title = 'ClvsPlantillaDisenoUI';
-   _opened = false;
+  opened = false;
   sidebarMode = 'push';
   menu = Menu;
   showsubMenu = false;
-  dock = false;
+  dock = true;
 
   constructor(private router: Router,
     private sidebarService: SidebarService){
-      this.sidebarService.toggler.subscribe(toggle => this._opened = toggle);
-      //this.sidebarService.toggler.subscribe(toggle => this.dock = toggle);
+     
+      this.sidebarService.toggler.subscribe(toggle => this.opened = toggle);
+      this.sidebarService.docked.subscribe(docked => this.dock = docked);
   }
   openedChange($event) { }
- 
-  _toggleDock() {
-    this.dock = !this.dock;
-  }
+
   onClickMenuOption(option: any) {
-    // console.log(option);
     this.menu.forEach(x => x.Selected = false);
     if (option.Name === 'Salir') {
     } else {
@@ -33,25 +30,17 @@ export class AppComponent {
       this.router.navigateByUrl(option.Path);
       if(option.SubMenu){
         this.showsubMenu = !this.showsubMenu;
-
-      // option.SubMenu.forEach(x=> {
-      //     x.Selected = false;
-      //     console.log("big");
-      // });
     }
       
     }
   }  
-  prueba(option: any){
-    
+  prueba(option: any){    
     this.showsubMenu = !this.showsubMenu;
     option.Selected = !option.Selected;
-    console.log(option);
-    console.log("div int");
-
+    
   }
   onClicksubMenuOption(option: any) {
-    console.log("div afuera");
+
     // option.SubMenu.forEach(x=> {
     //   console.log("div afuera");
     //       x.Selected = false;
@@ -161,7 +150,7 @@ export const Menu = [
     SubMenu: [
       {
         name: 'Inventario',
-        icon: 'fas fa-warehouse',
+        icon: 'fa fa-list-ol',
         Path: 'home',
         Selected: false
       },

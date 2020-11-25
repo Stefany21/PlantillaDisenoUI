@@ -1,5 +1,6 @@
+/*Style Footer*/
 .bg-dark {
-    background-color: #F1F1F1 !important;
+    background-color: white !important; /*#F1F1F1*/
 }
 
 .clavisco-footer {
@@ -9,3 +10,4 @@
     font-weight: 400;
     margin: 0;
 }
+/*End Style Footer*/

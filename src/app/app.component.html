@@ -2,8 +2,8 @@
  <ng-sidebar-container class="ColorFondoGeneral">
  
   <!-- A sidebar -->
-  <ng-sidebar [(opened)]="_opened" [(mode)]="sidebarMode" [dock]="dock" [dockedSize]="'60px'">
-    <div class="container-fluid" *ngIf="_opened">
+  <ng-sidebar [(opened)]="opened" [(mode)]="sidebarMode" [dock]="dock" [dockedSize]="'60px'">
+    <div class="container-fluid" *ngIf="opened">
       <div class="col-12 text-center mt-3">  
            <img src="../assets/img/loguito3.png" alt="CLAVISCO">
           <h5 class="pb-2 border-bottom">  
@@ -24,20 +24,20 @@
        </div>
     </div>
     <div class="container-fluid" *ngIf="dock">    
-      <div class="row text-left mt-3"ngbPopover="CLAVISCO" triggers="mouseenter:mouseleave" placement="right" container="body">  
+      <div class="row text-left mt-2"ngbPopover="CLAVISCO" triggers="mouseenter:mouseleave" placement="right" container="body">  
            <img src="../assets/img/loguito3.png" alt="CLAVISCO" style="height: 40px; width: 45px; padding-left: 5px;">
           <!-- <h5 class="pb-2 border-bottom">  
           </h5>       -->
       </div>
-      <div class="row text-left">
+      <div class="row text-left mt-3">
         <div class="col-12" *ngFor="let option of menu" (click)="onClickMenuOption(option)">
-          <div class="py-2" ngbPopover="{{option.Name}} " triggers="mouseenter:mouseleave" placement="right" container="body">
-            <i class="fa-lg mr-3" [ngClass]="[option.Icon]"></i>       
-
+          <div class="py-1" ngbPopover="{{option.Name}} " triggers="mouseenter:mouseleave" placement="right" container="body">
+            <i class="fa-lg mr-3 SizeIcon" [ngClass]="[option.Icon]"></i>
           </div> 
+
           <div *ngIf="option.Selected && showsubMenu" class="text-left">
-            <div class="py-2 text-left" *ngFor="let optionsubmenu of option.SubMenu"(click)="prueba(optionsubmenu)" ngbPopover="{{optionsubmenu.name}} " triggers="mouseenter:mouseleave" placement="right" container="body">
-            <i class="fa-lg mr-3" [ngClass]="[optionsubmenu.icon]"></i>
+            <div class="py-1 text-left" *ngFor="let optionsubmenu of option.SubMenu"(click)="prueba(optionsubmenu)" ngbPopover="{{optionsubmenu.name}} " triggers="mouseenter:mouseleave" placement="right" container="body">
+            <i class="fa-lg mr-3 SizeIcon" [ngClass]="[optionsubmenu.icon]"></i>
             </div>
           </div>           
         </div> 
@@ -46,22 +46,21 @@
   </ng-sidebar>
   <!-- Page content -->
   <div ng-sidebar-content>
-   
+
     <div class="container-fluid p-0 ColorFondoGeneral" >
+
       <app-header></app-header> 
-      <div id="router-outlet-container" class="pb-1 pt-2"
-      
-        [ngClass]="{'outlet-container-padding': !_opened, 'px-2': _opened}">
-        <button type="button" class="btn btn-info btn-sm" (click)="_toggleDock()">dock ({{dock}})</button>
+
+      <div id="router-outlet-container" class="pb-1 pt-2"      
+        [ngClass]="{'outlet-container-padding': !opened, 'px-2': opened}">
+        <!-- <button type="button" class="btn btn-info btn-sm" (click)="_toggleDock()">dock ({{dock}})</button> -->
         <router-outlet></router-outlet>
       </div>
+
       <app-footer></app-footer>
+
     </div>
-
- 
-
      
   </div>
-
 </ng-sidebar-container>
 
