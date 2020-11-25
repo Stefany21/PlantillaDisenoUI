@@ -17,6 +17,7 @@ export class AppComponent {
   constructor(private router: Router,
     private sidebarService: SidebarService){
       this.sidebarService.toggler.subscribe(toggle => this._opened = toggle);
+      //this.sidebarService.toggler.subscribe(toggle => this.dock = toggle);
   }
   openedChange($event) { }
  

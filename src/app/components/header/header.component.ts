@@ -9,11 +9,14 @@ import { SectionService } from "src/app/services/section.service";
 })
 export class HeaderComponent implements OnInit {
   _opened: boolean;
+  dock :boolean;
   sidebarMode = 'push';
   sidebarState: boolean;
+  dockState:boolean;
   constructor(private sidebarService: SidebarService,
     public sectionService: SectionService) {
-    this.sidebarState = false;
+    this.sidebarState = false;  
+    this.dockState = true;  
     
    }
 
@@ -23,6 +26,12 @@ export class HeaderComponent implements OnInit {
   toggleSidebar() {
     this.sidebarState = !this.sidebarState;
     this.sidebarService.toggler.next(this.sidebarState);
+  this.sidebarService.toggler.next(this.dockState);
+ this.sidebarService.toggler.subscribe(toggle => this.dock = toggle);
+    if(this.sidebarState){  
+      console.log("if opens");    
+      this.dockState = !this.dockState;      
+    }
   }
 }
 
