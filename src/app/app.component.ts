@@ -30,47 +30,14 @@ export class AppComponent {
       this.router.navigateByUrl(option.Path);
       if(option.SubMenu){
         this.showsubMenu = !this.showsubMenu;
-    }
-      
+    }      
     }
   }  
-  prueba(option: any){    
+  onClicksubMenuOption(option: any){    
     this.showsubMenu = !this.showsubMenu;
-    option.Selected = !option.Selected;
-    
+    option.Selected = !option.Selected;    
   }
-  onClicksubMenuOption(option: any) {
-
-    // option.SubMenu.forEach(x=> {
-    //   console.log("div afuera");
-    //       x.Selected = false;
-    //   });
-    // console.log(option);
-    // option.Selected = true;
-    
-    // option.SubMenu.forEach(x => {
-    //   x.Selected = false;
-
-  //   // });
-  // this.menu.forEach(x => x.Selected = false);
-  //   if (option.Name === 'Salir') {
-  //   } else {
-  //     option.Selected = true;    
-  //     this.router.navigateByUrl(option.Path);
-  //     if(option.SubMenu){
-
-  //       this.showsubMenu = !this.showsubMenu;
-  //       option.SubMenu.forEach(x=> {
-  //         x.Selected = false;
-  //         if(1==1){
-  //           //x.Selected = true;
-  //         //  option.SubMenu.Selected = true;
-  //         }
-  //       });      
-       
-  //     }
-  //   }  
-  }
+  
 }
 
 export const Menu = [
