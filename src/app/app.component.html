@@ -34,7 +34,7 @@
           <!-- <h5 class="pb-2 border-bottom">  
           </h5>       -->
       </div>
-      <div class="row text-left mt-2">
+      <div class="row text-left mt-3">
         <div class="col-12" *ngFor="let option of menu" (click)="onClickMenuOption(option)">
           <div class="row py-2 menu-option" [ngClass]="{'menu-option-selected': option.Selected}" ngbPopover="{{option.Name}} " triggers="mouseenter:mouseleave" placement="right" container="body">
             <i class="fa-lg mr-3 SizeIcon " [ngClass]="[option.Icon]"></i>
