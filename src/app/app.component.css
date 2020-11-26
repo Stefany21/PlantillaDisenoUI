@@ -59,6 +59,9 @@ ng-sidebar-container {
 #sidebarTitle {
     height: 55px;
 }
+.SizeSidebar{
+    height: 55px;  
+}
 
 .menu-option {
     cursor: pointer;
