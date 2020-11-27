@@ -3,12 +3,13 @@
  
   <!-- A sidebar -->
   <ng-sidebar [(opened)]="opened" [(mode)]="sidebarMode" [dock]="dock" [dockedSize]="'50px'">
+    
     <div class="container-fluid" *ngIf="opened">
-      <div class="col-12 text-center mt-3">  
-           <img src="../assets/img/loguito3.png" alt="CLAVISCO">
-          <h5 class="pb-2 border-bottom">  
-          </h5>      
-      </div>
+      <div class="col-12 text-center mt-1 Icono" ngbPopover="CLAVISCO" triggers="mouseenter:mouseleave" placement="right" container="body">  
+        <img class="img-fluid" src="../assets/img/loguito3.png" alt="CLAVISCO">
+       <h5 class="pb-1 border-bottom ">  
+       </h5>      
+   </div>
       <div class="row">
         <div class="col-12" *ngFor="let option of menu" (click)="onClickMenuOption(option)">
           <div class="py-2 px-2 menu-option" [ngClass]="{'menu-option-selected': option.Selected}">
@@ -20,7 +21,7 @@
             <i class="fa-lg mr-3" [ngClass]="[optionsubmenu.icon]"></i>{{optionsubmenu.name}}
             </div>
           </div>           
-        </div> 
+        </div>  
        </div> 
        <div class="text-center pt-2">
     
@@ -29,14 +30,14 @@
        </div>
     </div>
     <div class="container-fluid mt-10" *ngIf="dock">    
-      <div class="row mt-2 text-center ml-1"ngbPopover="CLAVISCO" triggers="mouseenter:mouseleave" placement="right" container="body">  
-           <img src="../assets/img/loguito3.png" alt="CLAVISCO" style="height: 30px; width: 30px;">
-          <!-- <h5 class="pb-2 border-bottom">  
-          </h5>       -->
+      <div class="mt-2"ngbPopover="CLAVISCO" triggers="mouseenter:mouseleave" placement="right" container="body">  
+           <img class="img-fluid" src="../assets/img/loguito3.png" alt="CLAVISCO" >
+         <h5 class="pb-2 border-bottom mt-2">  
+          </h5>       
       </div>
-      <div class="row text-left mt-3">
+      <div class="row text-left mt-2">
         <div class="col-12" *ngFor="let option of menu" (click)="onClickMenuOption(option)">
-          <div class="row py-2 menu-option" [ngClass]="{'menu-option-selected': option.Selected}" ngbPopover="{{option.Name}} " triggers="mouseenter:mouseleave" placement="right" container="body">
+          <div class="row py-2 mb-2 menu-option" [ngClass]="{'menu-option-selected': option.Selected}" ngbPopover="{{option.Name}} " triggers="mouseenter:mouseleave" placement="right" container="body">
             <i class="fa-lg mr-3 SizeIcon " [ngClass]="[option.Icon]"></i>
           </div> 
           <div *ngIf="option.Selected && showsubMenu" class="text-left">
