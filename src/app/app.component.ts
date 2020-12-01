@@ -106,7 +106,7 @@ export const Menu = [
   {
     Name: 'Ventas',
     Path: 'items',
-    Icon: 'VENTAS.svg',
+    Icon: 'VENTAS.png',
     Selected: false
   },
   {
