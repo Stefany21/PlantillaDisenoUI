@@ -44,25 +44,25 @@ export const Menu = [
   {
     Name: 'Inicio',
     Path: 'home',
-    Icon: 'fa fa-home',
+    Icon: 'HOME.png',
     Selected: true
-  },
+  }, 
   {
     Name: 'Administración',
     Path: 'company',
-    Icon: 'fa fa-cogs',
+    Icon: 'ADMIN.png',
     Selected: false
   },
   {
     Name: 'Socios de negocios',
-    Path: 'businesspartner',
-    Icon: 'fas fa-users',
-    Selected: false
+    Path: '',
+    Icon: 'SOCIOS.png', 
+    Selected: false 
   },
   {
     Name: 'Inventario',
     Path: 'items',
-    Icon: 'fas fa-list',
+    Icon: 'INVENTARIO.png',
     Selected: false,
     SubMenu: [
       {
@@ -106,13 +106,13 @@ export const Menu = [
   {
     Name: 'Ventas',
     Path: 'items',
-    Icon: 'fa fa-cart-plus',
+    Icon: 'VENTAS.svg',
     Selected: false
   },
   {
     Name: 'Documentos',
     Path: 'items',
-    Icon: 'fa fa-file',
+    Icon: 'DOCUMENTOS.png',
     Selected: false,
     SubMenu: [
       {
@@ -168,7 +168,7 @@ export const Menu = [
   {
     Name: 'Salir',
     Path: '',
-    Icon: 'fa fa-arrow-right',
+    Icon: 'SALIR.png',
     Selected: false 
-  }
+  } 
 ];

@@ -3,47 +3,55 @@
  
   <!-- A sidebar -->
   <ng-sidebar [(opened)]="opened" [(mode)]="sidebarMode" [dock]="dock" [dockedSize]="'50px'">
-    
-    <div class="container-fluid" *ngIf="opened">
-      <div class="row">
-      <div class="col-12 text-center mt-2 Icono" ngbPopover="CLAVISCO" triggers="mouseenter:mouseleave" placement="right" container="body">  
-        <img class="img-fluid" src="../assets/img/loguito3.png" alt="CLAVISCO">
-       <h5 class="pb-2 mt-0 border-bottom ">  
+    <!-- <div class="col-12 text-center mt-1" ngbPopover="CLAVISCO" triggers="mouseenter:mouseleave" placement="right" container="body">  
+      <img class="" src="../assets/img/prueba.svg" alt="CLAVISCO">
+     <h5 class="pb-1 mt-0 border-bottom ">  
+     </h5>  
+     </div>   -->
+    <div class="container-fluid" *ngIf="opened"> 
+     
+       <div class="text-center mt-1" ngbPopover="CLAVISCO" triggers="mouseenter:mouseleave" placement="right" container="body">  
+        <h5 class="pb-2 mt-0 border-bottom "> 
+           <img class="img-fluid" src="../assets/img/prueba4.svg" alt="CLAVISCO">       
        </h5>  
-       </div>    
-   </div>
-      <div class="row">
+       </div>     
+  
+      <div class="row"> 
         <div class="col-12" *ngFor="let option of menu" (click)="onClickMenuOption(option)">
           <div class="py-2 px-2 menu-option" [ngClass]="{'menu-option-selected': option.Selected}">
-            <i class="fa-lg mr-3" [ngClass]="[option.Icon]"></i>{{option.Name}}       
-
+         
+           <img class="" [src]="'../assets/img/menu/'+option.Icon">
+         
+           {{option.Name}}  
+         
           </div> 
           <div *ngIf="option.Selected && showsubMenu" class="col-12">
             <div class="py-2 px-2 menu-option" *ngFor="let optionsubmenu of option.SubMenu"  [ngClass]="{'menu-option-selected': optionsubmenu.Selected}"(click)="onClicksubMenuOption(optionsubmenu)">
             <i class="fa-lg mr-3" [ngClass]="[optionsubmenu.icon]"></i>{{optionsubmenu.name}}
             </div>
           </div>           
-        </div>  
+        </div>     
        </div> 
        <div class="text-center pt-2">    
         &copy; {{ annio }} Clavis Consultores S.A.      
        </div>
     </div>
     <div class="container-fluid" *ngIf="dock">    
-      <div class="row mt-2 Icono" ngbPopover="CLAVISCO" triggers="mouseenter:mouseleave" placement="right" container="body">  
-        <h5 class="pb-2 border-bottom"> 
-           <img class="img-fluid" src="../assets/img/loguito3.png" alt="CLAVISCO" >
+      <div class="row mt-1" ngbPopover="CLAVISCO" triggers="mouseenter:mouseleave" placement="right" container="body">  
+        <h5 class="pb-1 border-bottom"> 
+           <img class="" style="padding-left: 12px;" src="../assets/img/prueba4.svg" alt="CLAVISCO" >
           
           </h5>       
-      </div>
-      <div class="row text-left mt-1">
+      </div> 
+      <div class="row text-left">
         <div class="col-12" *ngFor="let option of menu" (click)="onClickMenuOption(option)">
-          <div class="row py-2 mb-2 menu-option" [ngClass]="{'menu-option-selected': option.Selected}" ngbPopover="{{option.Name}} " triggers="mouseenter:mouseleave" placement="right" container="body">
-            <i class="fa-lg mr-3 SizeIcon " [ngClass]="[option.Icon]"></i>
+          <div class="row py-2 px-2 menu-option" [ngClass]="{'menu-option-selected': option.Selected}" ngbPopover="{{option.Name}} " triggers="mouseenter:mouseleave" placement="right" container="body">
+            <!-- <i class="fa-lg mr-3 SizeIcon "> -->
+            <img class="SizeIcon" [src]="'../assets/img/menu/'+option.Icon">    
           </div> 
           <div *ngIf="option.Selected && showsubMenu" class="text-left">
             <div class="row py-2 pt-2 menu-option" [ngClass]="{'menu-option-selected': option.Selected}" *ngFor="let optionsubmenu of option.SubMenu" (click)="onClicksubMenuOption(optionsubmenu)" ngbPopover="{{optionsubmenu.name}} " triggers="mouseenter:mouseleave" placement="right" container="body">
-            <i class="fa-lg mr-3 SizeIcon" [ngClass]="[optionsubmenu.icon]"></i>
+            <!-- <i class="fa-lg mr-3 SizeIcon" [ngClass]="[optionsubmenu.icon]"></i> -->
             </div>
           </div>           
         </div> 
