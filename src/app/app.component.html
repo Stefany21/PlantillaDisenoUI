@@ -1,6 +1,5 @@
  <!-- Container for sidebar(s) + page content -->
- <ng-sidebar-container class="ColorFondoGeneral">
- 
+ <ng-sidebar-container class="ColorFondoGeneral"> 
   <!-- A sidebar -->
   <ng-sidebar [(opened)]="opened" [(mode)]="sidebarMode" [dock]="dock" [dockedSize]="'50px'">
     <!-- <div class="col-12 text-center mt-1" ngbPopover="CLAVISCO" triggers="mouseenter:mouseleave" placement="right" container="body">  
@@ -9,22 +8,17 @@
      </h5>  
      </div>   -->
     <div class="container-fluid" *ngIf="opened"> 
-     
-       <div class="text-center mt-1" ngbPopover="CLAVISCO" triggers="mouseenter:mouseleave" placement="right" container="body">  
-        <h5 class="pb-2 mt-0 border-bottom "> 
+            <div class="text-center mt-1" ngbPopover="CLAVISCO" triggers="mouseenter:mouseleave" placement="right" container="body">  
+            <h5 class="pb-2 mt-0 border-bottom "> 
            <img class="img-fluid" src="../assets/img/prueba4.svg" alt="CLAVISCO">       
-       </h5>  
-       </div>     
-  
+            </h5>  
+            </div>        
       <div class="row"> 
-        <div class="col-12" *ngFor="let option of menu" (click)="onClickMenuOption(option)">
-          <div class="py-2 px-2 menu-option" [ngClass]="{'menu-option-selected': option.Selected}">
-         
-           <img class="" [src]="'../assets/img/menu/'+option.Icon">
-         
-           {{option.Name}}  
-         
-          </div> 
+        <div class="col-12 px-0 py-0" *ngFor="let option of menu" (click)="onClickMenuOption(option)">
+          <div class="py-1 px-2 menu-option" [ngClass]="{'menu-option-selected': option.Selected}">         
+           <img class="mb-2 mr-2" [src]="'../assets/img/menu/'+option.Icon">         
+           {{option.Name}}          
+          </div>  
           <!-- <div *ngIf="option.Selected && showsubMenu" class="col-12">
             <div class="py-2 px-2 menu-option" *ngFor="let optionsubmenu of option.SubMenu"  [ngClass]="{'menu-option-selected': optionsubmenu.Selected}"(click)="onClicksubMenuOption(optionsubmenu)">
             <i class="fa-lg mr-3" [ngClass]="[optionsubmenu.icon]"></i>{{optionsubmenu.name}}

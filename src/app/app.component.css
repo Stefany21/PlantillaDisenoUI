@@ -11,6 +11,7 @@ ng-sidebar-container {
     height: 100vh;
     max-height: 100vh;
     /* overflow-x: hidden; */
+   
 }
 
 :host>>>aside.ng-sidebar--opened {
@@ -18,8 +19,9 @@ ng-sidebar-container {
     background-color: #1b81be;
     color: white;
     overflow-x: hidden;
-    width: 320px !important;
+    width: 300px !important;
     position: absolute;
+
     /* box-shadow: 1px 0px 5px 0px rgba(0, 0, 0, 0.3); */
 }
 
@@ -87,5 +89,6 @@ ng-sidebar-container {
       /* font-size: 20px; */
     margin-left: 12px;
   }
+  
   /*End Style Docked*/
 
