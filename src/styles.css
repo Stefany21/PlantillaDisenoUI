@@ -56,12 +56,14 @@ body {
 }
 /*End Style HEADER*/
 /*Style Footer*/
-.clavisco-footer {
+.footer {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-    color: #f1f1f1;
-    font-size: 15px;
+    /* color: #f1f1f1; */
+    font-size: 16px;
     font-weight: 400;
-
+  margin-top: 250px;
+  text-align: center;
+  /* align-bottom" */
 }
 /*End Style Footer*/
 
