@@ -15,7 +15,7 @@
             </div>        
       <div class="row"> 
         <div class="col-12 px-0 py-0" *ngFor="let option of menu" (click)="onClickMenuOption(option)">
-          <div class="py-1 px-2 menu-option" [ngClass]="{'menu-option-selected': option.Selected}">         
+          <div class="py-1 px-2 ml-3 mr-3 menu-option" [ngClass]="{'menu-option-selected': option.Selected}">         
            <img class="mb-2 mr-2" [src]="'../assets/img/menu/'+option.Icon">         
            {{option.Name}}          
           </div>  
