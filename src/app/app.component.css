@@ -70,7 +70,7 @@ ng-sidebar-container {
 }
 
 .menu-option-selected, .menu-option:hover {
-    background-color: #556da7; 
+    background-color: #0062A8; 
 }
 /*End Style Sidebar*/
 
@@ -87,7 +87,7 @@ ng-sidebar-container {
   }
   .SizeIcon{
       /* font-size: 20px; */
-    margin-left: 12px;
+    margin-left: 13px;
   }
   
   /*End Style Docked*/

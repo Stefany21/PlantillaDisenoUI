@@ -12,18 +12,13 @@ body {
     background-color: white !important;/*#f1f1f1*/
 }
 /*EndContent Sidebar*/
-/*ICONO*/
 
-.Icono{
-    /* border-bottom: 1px solid white; */
-    
-}
+/*ICONO*/
 .Icono img{
     /* //width: 40px;
   //  height:40px; */
     margin-left: 12px;
-    
-  
+      
 }
 /*End ICONO*/
 
@@ -57,13 +52,27 @@ body {
 /*End Style HEADER*/
 /*Style Footer*/
 .footer {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-    /* color: #f1f1f1; */
+    /* font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; */
+    color: white;
     font-size: 16px;
     font-weight: 400;
-  margin-top: 250px;
-  text-align: center;
-  /* align-bottom" */
+    font-family:"Segoe UI Regular";
+    font-size: 15px; 
+    position: absolute;
+    bottom: 3%;
+}
+.footer span {
+    color:white;
 }
 /*End Style Footer*/
-
+/*Fuente Menu*/
+.FuenteMenu{
+    color: white;
+    font-family:"Segoe UI Regular";
+    font-size: 16px;  
+}
+.FuenteSubMenu{
+    color: white;
+    font-family:"Segoe UI Regular";
+    font-size: 14px;  
+}

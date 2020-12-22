@@ -7,28 +7,28 @@
      <h5 class="pb-1 mt-0 border-bottom ">  
      </h5>  
      </div>   -->
-    <div class="container-fluid" *ngIf="opened"> 
+    <div class="container-fluid pl-1 pr-1" *ngIf="opened"> 
             <div class="text-center mt-1" ngbPopover="CLAVISCO" triggers="mouseenter:mouseleave" placement="right" container="body">  
             <h5 class="pb-2 mt-0 border-bottom "> 
            <img class="img-fluid" src="../assets/img/prueba4.svg" alt="CLAVISCO">       
             </h5>  
             </div>        
-      <div class="row"> 
-        <div class="col-12 px-0 py-0" *ngFor="let option of menu" (click)="onClickMenuOption(option)">
-          <div class="py-1 px-2 ml-3 mr-3 menu-option" [ngClass]="{'menu-option-selected': option.Selected}">         
+      <div class="row FuenteMenu"> 
+        <div class="col-12" *ngFor="let option of menu" (click)="onClickMenuOption(option)">
+          <div class="py-1 px-1 menu-option" [ngClass]="{'menu-option-selected': option.Selected}">         
            <img class="mb-2 mr-2" [src]="'../assets/img/menu/'+option.Icon">         
            {{option.Name}}          
           </div>  
-          <!-- <div *ngIf="option.Selected && showsubMenu" class="col-12">
+         <!-- <div *ngIf="option.Selected && showsubMenu" class="col-12 FuenteSubMenu">
             <div class="py-2 px-2 menu-option" *ngFor="let optionsubmenu of option.SubMenu"  [ngClass]="{'menu-option-selected': optionsubmenu.Selected}"(click)="onClicksubMenuOption(optionsubmenu)">
             <i class="fa-lg mr-3" [ngClass]="[optionsubmenu.icon]"></i>{{optionsubmenu.name}}
             </div>
-          </div>            -->
+          </div>           -->
         </div>      
        </div> 
-       <div class="footer">    
-       <span> &copy; {{ annio }} Clavis Consultores S.A.    </span>   
-    </div>
+       <div class="mx-4 footer">    
+       <span> &copy; {{ annio }} Clavis Consultores S.A.</span>   
+    </div>   
     </div>
     <div class="container-fluid" *ngIf="dock">    
       <div class="row mt-1" ngbPopover="CLAVISCO" triggers="mouseenter:mouseleave" placement="right" container="body">  
