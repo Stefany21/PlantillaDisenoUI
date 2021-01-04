@@ -19,11 +19,11 @@
            <img class="mb-2 mr-3" [src]="'../assets/img/menu/'+option.Icon">         
            {{option.Name}}          
           </div>  
-         <div *ngIf="option.Selected && showsubMenu" class="col-12 FuenteSubMenu">
+         <!-- <div *ngIf="option.Selected && showsubMenu" class="col-12 FuenteSubMenu">
             <div class="py-2 px-2 menu-option" *ngFor="let optionsubmenu of option.SubMenu"  [ngClass]="{'menu-option-selected': optionsubmenu.Selected}"(click)="onClicksubMenuOption(optionsubmenu)">
             <i class="fa-lg mr-3" [ngClass]="[optionsubmenu.icon]"></i>{{optionsubmenu.name}}
             </div>
-          </div>          
+          </div>           -->
         </div>      
        </div> 
        <div class="mx-4 footer">    
@@ -43,11 +43,11 @@
             <!-- <i class="fa-lg mr-3 SizeIcon "> -->
             <img class="SizeIcon" [src]="'../assets/img/menu/'+option.Icon">    
           </div> 
-          <div *ngIf="option.Selected && showsubMenu" class="text-left">
+          <!-- <div *ngIf="option.Selected && showsubMenu" class="text-left">
             <div class="row py-2 pt-2 menu-option" [ngClass]="{'menu-option-selected': option.Selected}" *ngFor="let optionsubmenu of option.SubMenu" (click)="onClicksubMenuOption(optionsubmenu)" ngbPopover="{{optionsubmenu.name}} " triggers="mouseenter:mouseleave" placement="right" container="body">
          <i class="fa-lg mr-3 SizeIcon" [ngClass]="[optionsubmenu.icon]"></i> 
             </div>
-          </div>           
+          </div>            -->
         </div> 
        </div>
     </div>
