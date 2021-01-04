@@ -10,20 +10,20 @@
     <div class="container-fluid pl-1 pr-1" *ngIf="opened"> 
             <div class="text-center mt-1" ngbPopover="CLAVISCO" triggers="mouseenter:mouseleave" placement="right" container="body">  
             <h5 class="pb-2 mt-0 border-bottom "> 
-           <img class="img-fluid" src="../assets/img/prueba4.svg" alt="CLAVISCO">       
+           <img class="img-fluid" src="../assets/img/logoclvs.png" alt="CLAVISCO">       
             </h5>  
             </div>        
       <div class="row FuenteMenu"> 
         <div class="col-12" *ngFor="let option of menu" (click)="onClickMenuOption(option)">
-          <div class="py-1 px-1 menu-option" [ngClass]="{'menu-option-selected': option.Selected}">         
-           <img class="mb-2 mr-2" [src]="'../assets/img/menu/'+option.Icon">         
+          <div class="py-1 px-2 menu-option" [ngClass]="{'menu-option-selected': option.Selected}">         
+           <img class="mb-2 mr-3" [src]="'../assets/img/menu/'+option.Icon">         
            {{option.Name}}          
           </div>  
-         <!-- <div *ngIf="option.Selected && showsubMenu" class="col-12 FuenteSubMenu">
+         <div *ngIf="option.Selected && showsubMenu" class="col-12 FuenteSubMenu">
             <div class="py-2 px-2 menu-option" *ngFor="let optionsubmenu of option.SubMenu"  [ngClass]="{'menu-option-selected': optionsubmenu.Selected}"(click)="onClicksubMenuOption(optionsubmenu)">
             <i class="fa-lg mr-3" [ngClass]="[optionsubmenu.icon]"></i>{{optionsubmenu.name}}
             </div>
-          </div>           -->
+          </div>          
         </div>      
        </div> 
        <div class="mx-4 footer">    
@@ -33,7 +33,7 @@
     <div class="container-fluid" *ngIf="dock">    
       <div class="row mt-1" ngbPopover="CLAVISCO" triggers="mouseenter:mouseleave" placement="right" container="body">  
         <h5 class="pb-1 border-bottom"> 
-           <img class="" style="padding-left: 12px;" src="../assets/img/prueba4.svg" alt="CLAVISCO" >
+           <img class="" style="padding-left: 12px;" src="../assets/img/logoclvs.png" alt="CLAVISCO" >
           
           </h5>       
       </div> 
@@ -43,11 +43,11 @@
             <!-- <i class="fa-lg mr-3 SizeIcon "> -->
             <img class="SizeIcon" [src]="'../assets/img/menu/'+option.Icon">    
           </div> 
-          <!-- <div *ngIf="option.Selected && showsubMenu" class="text-left">
+          <div *ngIf="option.Selected && showsubMenu" class="text-left">
             <div class="row py-2 pt-2 menu-option" [ngClass]="{'menu-option-selected': option.Selected}" *ngFor="let optionsubmenu of option.SubMenu" (click)="onClicksubMenuOption(optionsubmenu)" ngbPopover="{{optionsubmenu.name}} " triggers="mouseenter:mouseleave" placement="right" container="body">
          <i class="fa-lg mr-3 SizeIcon" [ngClass]="[optionsubmenu.icon]"></i> 
             </div>
-          </div>            -->
+          </div>           
         </div> 
        </div>
     </div>

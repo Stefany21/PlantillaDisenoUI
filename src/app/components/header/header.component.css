@@ -4,3 +4,22 @@
     color: white;
 
 }
+header{
+    /* Enable flex mode. */
+    display: flex; 
+    
+    /* Spread out the elements inside the header. */
+    justify-content: space-between;
+
+    /* Align items vertically in the center. */
+    align-items: center;
+}
+@media (max-width: 1000px){
+    header{
+            /* Reverse the axis of the header, making it vertical. */
+            flex-direction: column;
+            
+            /* Align items to the begining (the left) of the header. */
+            align-items: flex-start;
+    }
+}
