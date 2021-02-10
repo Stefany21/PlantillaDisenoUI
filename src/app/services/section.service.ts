@@ -22,7 +22,7 @@ export class SectionService {
       case 'home':
         this.currentSection = 'Inicio';
         break;
-      case 'documents':
+      case 'admin':
         this.currentSection = 'Administración';
         break;
       case 'transacts':

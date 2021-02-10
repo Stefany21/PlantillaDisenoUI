@@ -49,7 +49,7 @@ export const Menu = [
   }, 
   {
     Name: 'Administración',
-    Path: 'company',
+    Path: 'admin',
     Icon: 'ADMIN.png',
     Selected: false
   },
