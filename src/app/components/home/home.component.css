@@ -8,13 +8,20 @@ table {
   border-collapse: collapse;
   border-radius: 0.5em;
   overflow: hidden;
-
+  /* border: 1px solid #ddd; */
 }
 
 th, td {
-  padding: 0.5em;
+    padding: .1em 0.2em;
   /* background: #ddd; */
-  border-bottom: 2px solid white; 
+  /* border-bottom: 1px solid #ddd; */
+  
 }
-
+th{
+   border-bottom: 1px solid white !important;  
+}
+ .test{
+    -webkit-box-shadow: 0px 0px 1px 1px rgba(214,214,214,0.72); 
+box-shadow: 0px 0px 1px 1px rgba(214,214,214,0.72);
+ }
 

@@ -55,7 +55,7 @@ export const Menu = [
   },
   {
     Name: 'Socios de negocios',
-    Path: '',
+    Path: 'bp',
     Icon: 'SOCIOS.png', 
     Selected: false 
   },
