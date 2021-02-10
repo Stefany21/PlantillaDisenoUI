@@ -1,1 +1,26 @@
 
+.invi {
+    border: none;
+    background-color: transparent;
+    /*word-break:break-all;*/
+}
+table {
+  border-collapse: collapse;
+  border-radius: 0.5em;
+  overflow: hidden;
+}
+
+th, td {
+  padding: 1em;
+  /* background: #ddd; */
+  border-bottom: 2px solid white; 
+}
+
+.css-mine {
+  margin-top: 2em;
+  clear: both;
+}
+
+body {
+  margin: 1.5em;
+}

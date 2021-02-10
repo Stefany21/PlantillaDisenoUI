@@ -10,23 +10,22 @@ import { SectionService } from "src/app/services/section.service";
 export class HeaderComponent implements OnInit {
   sidebarMode = 'push';
   sidebarState: boolean;
-  dockState:boolean;
+  dockState: boolean;
   constructor(private sidebarService: SidebarService,
     public sectionService: SectionService) {
-    this.sidebarState = false;  
-     this.dockState = true;  
-    
-   }
+    this.sidebarState = false;
+    this.dockState = true;
+
+  }
 
   ngOnInit(): void {
   }
-  
+
   toggleSidebar() {
     this.sidebarState = !this.sidebarState;
     this.dockState = !this.dockState;
     this.sidebarService.toggler.next(this.sidebarState);
-   this.sidebarService.docked.next(this.dockState);
+    this.sidebarService.docked.next(this.dockState);
   }
 }
 
- 

@@ -3,7 +3,6 @@
 body {
     width: 100vw;
     height: 100vh;
-    /* overflow-x: hidden; */
     overflow-y: hidden;
     padding: 0px;
     margin: 0px;
@@ -15,8 +14,7 @@ body {
 
 /*ICONO*/
 .Icono img{
-    /* //width: 40px;
-  //  height:40px; */
+  
     margin-left: 12px;
     
   
@@ -76,4 +74,19 @@ body {
     color: white;
     font-family:"Segoe UI Regular";
     font-size: 14px;  
+}
+
+/*HOME*/
+
+
+.thHeader {
+    background-color: #1B81BE;
+    color: white;
+    font-size: 14px;
+    font-family: "Segoe UI";
+    font-weight: lighter;
+    
+}
+.border{
+    border-radius: 5px 0px 0px 5px;
 }
