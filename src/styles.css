@@ -82,11 +82,9 @@ body {
 .thHeader {
     background-color: #1B81BE;
     color: white;
-    font-size: 14px;
+    font-size: 16px;
     font-family: "Segoe UI";
     font-weight: lighter;
     
 }
-.border{
-    border-radius: 5px 0px 0px 5px;
-}
+
