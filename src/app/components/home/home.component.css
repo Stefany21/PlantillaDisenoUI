@@ -11,16 +11,16 @@ table {
 }
 
 th, td {
-  padding: 1em;
+  padding: 0.5em;
   /* background: #ddd; */
   border-bottom: 2px solid white; 
 }
 
-.css-mine {
+/* .css-mine {
   margin-top: 2em;
   clear: both;
 }
 
 body {
   margin: 1.5em;
-}
+} */
