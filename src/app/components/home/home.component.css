@@ -6,7 +6,7 @@
 }
 table {
   border-collapse: collapse;
-  border-radius: 0.5em;
+  border-radius: 0.3em;
   overflow: hidden;
   /* border: 1px solid #ddd; */
 }
@@ -25,3 +25,7 @@ th{
 box-shadow: 0px 0px 1px 1px rgba(214,214,214,0.72);
  }
 
+   .btnstyle{
+     color:white;
+     background-color: #1B81BE;
+   }
