@@ -18,80 +18,43 @@
 
 
 <table class="table invi table-hover test">
-    <thead class="invi">
+    <thead class="">
       <tr>
         <th scope="col" class="thHeader">#</th>  
-        <th scope="col" class="thHeader">Usuario</th>
-        <th scope="col" class="thHeader">Fecha</th>
-        <th scope="col" class="thHeader">Archivos</th>
+        <th scope="col" class="thHeader" sortable="name" (sort)="onSort($event)">Nombre</th>  
+        <th scope="col" class="thHeader" sortable="area" (sort)="onSort($event)">Orden  </th>
+        <th scope="col" class="thHeader" sortable="population" (sort)="onSort($event)">Sort</th>
         <th scope="col" class="thHeader">Opciones</th>
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td scope="row">1</td>
-        <td>eaguilar@clavisco</td>
-        <td>04/02/2021 8:00 AM</td>
-        <td>gap.xml, gap.pdf</td>
-        <td>
-            <ul class="list-inline">
-                <li class="list-inline-item cursor-hand">
-                    <i class="fa fa-list" aria-hidden="true" title="Crear en sap"></i>
-                </li>
-                <li class="list-inline-item cursor-hand">
-                    <i class="fa fa-download" aria-hidden="true" title="Descargar xml"></i>
-                </li>
-             </ul>
+      <tr *ngFor="let country of countries">
+        <th scope="col">{{ country.id }}</th>
+        <td> 
+          {{ country.name }}
         </td>
-      </tr>
-      <tr>
-        <td scope="row">3</td>
-        <td>larry@clavisco</td>
-        <td>01/01/2021 1:58 PM</td>
-        <td>receta.xml, receta.pdf</td>
-        <td>
-            <ul class="list-inline">
-                <li class="list-inline-item cursor-hand">
-                    <i class="fa fa-list" aria-hidden="true" title="Crear en sap"></i>
-                </li>
-                <li class="list-inline-item cursor-hand">
-                    <i class="fa fa-download" aria-hidden="true" title="Descargar xml"></i>
-                </li>
-             </ul>
-        </td>
-      </tr>
-      <tr>
-        <td scope="row">4</td>
-        <td>larry@clavisco</td>
-        <td>01/01/2021 1:58 PM</td>
-        <td>receta.xml, receta.pdf</td>
-        <td>
-            <ul class="list-inline">
-                <li class="list-inline-item cursor-hand">
-                    <i class="fa fa-list" aria-hidden="true" title="Crear en sap"></i>
-                </li>
-                <li class="list-inline-item cursor-hand">
-                    <i class="fa fa-download" aria-hidden="true" title="Descargar xml"></i>
-                </li>
-             </ul>
-        </td>
-      </tr>
-      <tr>
-        <td scope="row">5</td>
-        <td>larry@clavisco</td>
-        <td>01/01/2021 1:58 PM</td>
-        <td>receta.xml, receta.pdf</td>
-        <td>
-            <ul class="list-inline">
-                <li class="list-inline-item cursor-hand">
-                    <i class="fa fa-list" aria-hidden="true" title="Crear en sap"></i>
-                </li>
-                <li class="list-inline-item cursor-hand">
-                    <i class="fa fa-download" aria-hidden="true" title="Descargar xml"></i>
-                </li>
-             </ul>
-        </td>
-      </tr>
+        <td>{{ country.area | number}}</td>
+        <td>{{ country.population | number }}</td> 
+        <td></td>  
+      </tr> 
+    
+         
     </tbody>
   </table>
+  <div class="d-flex justify-content-between p-2">
+    <ngb-pagination [collectionSize]="collectionSize" [(page)]="page" [pageSize]="pageSize" (pageChange)="refreshCountries()" [maxSize]="1">
+    </ngb-pagination>
+  
+    <select class="custom-select" style="width: auto" [(ngModel)]="pageSize" (change)="refreshCountries()">
+      <option [ngValue]="2">2 items per page</option>
+      <option [ngValue]="4">4 items per page</option>
+      <option [ngValue]="6">6 items per page</option>
+    </select>
+  </div>
+
+
+  
+
+
+
 
