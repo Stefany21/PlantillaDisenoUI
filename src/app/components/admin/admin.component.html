@@ -11,7 +11,7 @@
     </ng-template>
   </ngb-carousel>   
   
-  <hr>
+  <hr>  
   
   <div class="form-check">
     <input type="checkbox" class="form-check-input" id="pauseOnHover" [(ngModel)]="pauseOnHover">
@@ -32,3 +32,77 @@
   <button type="button" (click)="togglePaused()" class="btn btn-outline-dark btn-sm">
     {{paused ? 'Cycle' : 'Pause' }}
   </button>
+
+  <div class="div mt-3">
+  <p>
+    <button type="button" class="btn btn-outline-primary" (click)="collapse.toggle()" [attr.aria-expanded]="!isCollapsed"
+      aria-controls="collapseExample">
+      Toggle
+    </button>
+  </p>
+  <div #collapse="ngbCollapse" [(ngbCollapse)]="isCollapsed">
+    <div class="card">
+      <div class="card-body">
+        You can collapse this card by clicking Toggle
+<br>
+        <ng-template #content let-c="close" let-d="dismiss">
+          <div class="modal-header">
+            <h4 class="modal-title" id="modal-basic-title">Hi there!</h4>
+            <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>Hello, World!</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-outline-dark" (click)="c('Save click')">Save</button>
+          </div>
+        </ng-template>
+        
+        <button class="btn btn-lg btn-outline-primary" (click)="open(content)">Launch demo modal</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="div mt-3">
+  
+  <ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0">
+    <ngb-panel title="Simple">
+      <ng-template ngbPanelContent>
+        <div class="div mt-3">
+          <p>Rating
+          </p>
+          <ngb-rating [(rate)]="currentRate"></ngb-rating>
+          <hr>
+         
+          <pre>Rate: <b>{{currentRate}}</b></pre>
+          </div>
+      </ng-template>
+    </ngb-panel>   
+  </ngb-accordion>
+</div>
+<div class="div mt-3">
+ 
+<ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-tabs">
+  <li *ngFor="let id of tabs" [ngbNavItem]="id">
+    <a ngbNavLink>
+      Tab {{ id }}
+      <span class="close position-relative pl-2 font-weight-light" (click)="close($event, id)">×</span>
+    </a>
+    
+    <ng-template ngbNavContent>
+      <p>Tab {{ id }} content</p>
+    </ng-template>
+  </li>
+ 
+  <li class="nav-item">
+    <a class="nav-link" href (click)="add($event)">...</a>
+  </li>
+</ul>
+
+<div [ngbNavOutlet]="nav" class="mt-2"></div>
+
+<pre>Active: {{ active }}</pre>
+</div>

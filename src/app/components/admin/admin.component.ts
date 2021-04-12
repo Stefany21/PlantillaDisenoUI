@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { NgbCarousel, NgbSlideEvent, NgbSlideEventSource } from '@ng-bootstrap/ng-bootstrap';
+import { NgbCarousel, NgbModal, NgbModalConfig, NgbSlideEvent, NgbSlideEventSource } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-admin',
@@ -7,8 +7,29 @@ import { NgbCarousel, NgbSlideEvent, NgbSlideEventSource } from '@ng-bootstrap/n
   styleUrls: ['./admin.component.css']
 })
 export class AdminComponent implements OnInit {
+  public isCollapsed = false;
+  currentRate = 8;
+  open(content) {
+    this.modalService.open(content);
+  }
 
-  constructor() { }
+  tabs = [1, 2, 3];
+  counter = this.tabs.length + 1;
+  active;
+
+  close(event: MouseEvent, toRemove: number) {
+    this.tabs = this.tabs.filter(id => id !== toRemove);
+    event.preventDefault();
+    event.stopImmediatePropagation();
+  }
+
+  add(event: MouseEvent) {
+    this.tabs.push(this.counter++);
+    event.preventDefault();
+  }
+  constructor(config: NgbModalConfig, private modalService: NgbModal) {// customize default values of modals used by this component tree
+    config.backdrop = 'static';
+    config.keyboard = false; }
  
   ngOnInit(): void {
   }
