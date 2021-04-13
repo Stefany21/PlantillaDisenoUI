@@ -1,127 +1,227 @@
-<ngb-carousel #carousel [interval]="1000" [pauseOnHover]="pauseOnHover" [pauseOnFocus]="pauseOnFocus" (slide)="onSlide($event)">
-    <ng-template ngbSlide *ngFor="let img of images; index as i">
-      <div class="carousel-caption">
-        <h3>My slide {{i + 1}} title</h3>
+<ngb-carousel #carousel [interval]="1000" [pauseOnHover]="pauseOnHover" [pauseOnFocus]="pauseOnFocus"
+  (slide)="onSlide($event)">
+  <ng-template ngbSlide *ngFor="let img of images; index as i">
+    <div class="carousel-caption">
+      <h3>My slide {{i + 1}} title</h3>
+    </div>
+    <a target="_blank" rel="nofollow noopener noreferrer">
+      <div class="picsum-img-wrapper">
+        <img [src]="img" alt="My image {{i + 1}} description">
       </div>
-      <a  target="_blank" rel="nofollow noopener noreferrer">
-        <div class="picsum-img-wrapper">
-          <img [src]="img" alt="My image {{i + 1}} description">
-        </div>
-      </a>
-    </ng-template>
-  </ngb-carousel>   
-  
-  <hr>  
-  
-  <div class="form-check">
-    <input type="checkbox" class="form-check-input" id="pauseOnHover" [(ngModel)]="pauseOnHover">
-    <label class="form-check-label" for="pauseOnHover">Pause on hover</label>
-  </div>
-  <div class="form-check">
-    <input type="checkbox" class="form-check-input" id="pauseOnFocus" [(ngModel)]="pauseOnFocus">
-    <label class="form-check-label" for="pauseOnFocus">Pause on focus</label>
-  </div>
-  <div class="form-check">
-    <input type="checkbox" class="form-check-input" id="unpauseOnArrow" [(ngModel)]="unpauseOnArrow">
-    <label class="form-check-label" for="unpauseOnArrow">Unpause when clicking on arrows</label>
-  </div>
-  <div class="form-check">
-    <input type="checkbox" class="form-check-input" id="pauseOnIndicator" [(ngModel)]="pauseOnIndicator">
-    <label class="form-check-label" for="pauseOnIndicator">Pause when clicking on navigation indicator</label>
-  </div>
-  <button type="button" (click)="togglePaused()" class="btn btn-outline-dark btn-sm">
-    {{paused ? 'Cycle' : 'Pause' }}
-  </button>
-
-
-
-
-<div class="div mt-3 mb-3">
- 
-<ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-tabs">
-  <li  [ngbNavItem]="1">
-    <a ngbNavLink>
-     Toggle
-      <!-- <span class="close position-relative pl-2 font-weight-light" (click)="close($event, id)">×</span> -->
     </a>
-    
-    <ng-template ngbNavContent>
-      <div class="div mt-3">
-        <p>
-          <button type="button" class="btn btn-outline-primary" (click)="collapse.toggle()" [attr.aria-expanded]="!isCollapsed"
-            aria-controls="collapseExample">
-            Toggle
-          </button>
-        </p>
-        <div #collapse="ngbCollapse" [(ngbCollapse)]="isCollapsed">
-          <div class="card">
-            <div class="card-body">
-              You can collapse this card by clicking Toggle
-      <br>
+  </ng-template>
+</ngb-carousel>
+
+<hr>
+
+<div class="form-check">
+  <input type="checkbox" class="form-check-input" id="pauseOnHover" [(ngModel)]="pauseOnHover">
+  <label class="form-check-label" for="pauseOnHover">Pause on hover</label>
+</div>
+<div class="form-check">
+  <input type="checkbox" class="form-check-input" id="pauseOnFocus" [(ngModel)]="pauseOnFocus">
+  <label class="form-check-label" for="pauseOnFocus">Pause on focus</label>
+</div>
+<div class="form-check">
+  <input type="checkbox" class="form-check-input" id="unpauseOnArrow" [(ngModel)]="unpauseOnArrow">
+  <label class="form-check-label" for="unpauseOnArrow">Unpause when clicking on arrows</label>
+</div>
+<div class="form-check">
+  <input type="checkbox" class="form-check-input" id="pauseOnIndicator" [(ngModel)]="pauseOnIndicator">
+  <label class="form-check-label" for="pauseOnIndicator">Pause when clicking on navigation indicator</label>
+</div>
+<button type="button" (click)="togglePaused()" class="btn btn-outline-dark btn-sm">
+  {{paused ? 'Cycle' : 'Pause' }}
+</button>
+
+
+
+
+<div class="div mt-3 mb-3 pb-5">
+
+  <ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-tabs">
+    <li [ngbNavItem]="1">
+      <a ngbNavLink>
+        Toggle
+        <!-- <span class="close position-relative pl-2 font-weight-light" (click)="close($event, id)">×</span> -->
+      </a>
+
+      <ng-template ngbNavContent>
+        <div class="div mt-3">
+          <p>
+            <button type="button" class="btn btn-outline-primary" (click)="collapse.toggle()"
+              [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample">
+              Toggle
+            </button>
+          </p>
+          <div #collapse="ngbCollapse" [(ngbCollapse)]="isCollapsed">
+            <div class="card">
+              <div class="card-body">
+                You can collapse this card by clicking Toggle
+                <br>
               </div>
+            </div>
           </div>
         </div>
-      </div>
-    </ng-template>
-  </li>
-  <li  [ngbNavItem]="2">
-    <a ngbNavLink>
-     Modal
-      <!-- <span class="close position-relative pl-2 font-weight-light" (click)="close($event, id)">×</span> -->
-    </a>    
-    <ng-template ngbNavContent>
-      <ng-template #content let-c="close" let-d="dismiss">
-        <div class="modal-header">
-          <h4 class="modal-title" id="modal-basic-title">Hi there!</h4>
-          <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <p>Hello, World!</p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-outline-dark" (click)="c('Save click')">Save</button>
+      </ng-template>
+    </li>
+    <li [ngbNavItem]="2">
+      <a ngbNavLink>
+        Modal
+        <!-- <span class="close position-relative pl-2 font-weight-light" (click)="close($event, id)">×</span> -->
+      </a>
+      <ng-template ngbNavContent>
+        <ng-template #content let-c="close" let-d="dismiss">
+          <div class="modal-header">
+            <h4 class="modal-title" id="modal-basic-title">Hi there!</h4>
+            <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>Hello, World!</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-outline-dark" (click)="c('Save click')">Save</button>
+          </div>
+        </ng-template>
+
+        <button class="btn btn-lg btn-outline-primary" (click)="open(content)">Launch demo modal</button>
+
+      </ng-template>
+    </li>
+    <li [ngbNavItem]="3">
+      <a ngbNavLink>
+        Accordion
+        <!-- <span class="close position-relative pl-2 font-weight-light" (click)="close($event, id)">×</span> -->
+      </a>
+
+      <ng-template ngbNavContent>
+        <div class="div mt-3">
+
+          <ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0">
+            <ngb-panel title="Simple">
+              <ng-template ngbPanelContent>
+                <div class="div mt-3">
+                  <p>Leggings Ocecat cerveza artesanal de la granja a la mesa, sintetizador estético de mezclilla cruda,
+                    probablemente no hayas oído hablar de ellos accusamus labore VHS sostenible.
+                  </p>
+                </div>
+              </ng-template>
+            </ngb-panel>
+          </ngb-accordion>
         </div>
       </ng-template>
-      
-      <button class="btn btn-lg btn-outline-primary" (click)="open(content)">Launch demo modal</button>
-   
-    </ng-template>
-  </li>
-  <li  [ngbNavItem]="3">
-    <a ngbNavLink>
-     Accordeon
-      <!-- <span class="close position-relative pl-2 font-weight-light" (click)="close($event, id)">×</span> -->
-    </a>
-    
-    <ng-template ngbNavContent>
-      <div class="div mt-3">
-  
-        <ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0">
-          <ngb-panel title="Simple">
-            <ng-template ngbPanelContent>
-              <div class="div mt-3">
-                <p>Rating 
-                </p>
-                <ngb-rating [(rate)]="currentRate"></ngb-rating>
-                <hr>
-               
-                <pre>Rate: <b>{{currentRate}}</b></pre>
+    </li>
+    <li [ngbNavItem]="4">
+      <a ngbNavLink>
+        Rating
+        <!-- <span class="close position-relative pl-2 font-weight-light" (click)="close($event, id)">×</span> -->
+      </a>
+      <ng-template ngbNavContent>
+        <div class="div mt-3">
+          <p>Rating
+          </p>
+          <ngb-rating [(rate)]="currentRate"></ngb-rating>
+          <hr>
+          <pre>Rate: <b>{{currentRate}}</b></pre>
+        </div>
+      </ng-template>
+    </li>
+    <li [ngbNavItem]="5">
+      <a ngbNavLink>
+        Progress bars
+      </a>
+      <ng-template ngbNavContent>
+        <div class="div mt-3">
+          
+          <p><ngb-progressbar type="success" textType="white" [value]="25" [showValue]="true"></ngb-progressbar></p>
+<p><ngb-progressbar type="dark" textType="white" [value]="50" [showValue]="true"></ngb-progressbar></p>
+<p><ngb-progressbar type="info" textType="white" [value]="75" [showValue]="true"></ngb-progressbar></p>
+<p><ngb-progressbar type="warning" textType="dark" [value]="100" [showValue]="true"></ngb-progressbar></p>
+        </div>
+      </ng-template>
+    </li>
+    <li [ngbNavItem]="6">
+      <a ngbNavLink>
+        Datepicker 
+      </a>
+      <ng-template ngbNavContent>
+        <div class="div mt-3">
+          <form class="form-inline">
+            <div class="form-group">
+              <div class="input-group">
+                <input class="form-control" placeholder="yyyy-mm-dd"
+                       name="dp" [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker">
+                <div class="input-group-append">
+                  <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button"></button>
                 </div>
-            </ng-template>
-          </ngb-panel>   
-        </ngb-accordion>
-      </div>
-    </ng-template>
-  </li>
- 
-  <li class="nav-item">
-    <a class="nav-link" href (click)="add($event)">...</a>
-  </li>
-</ul>
+              </div>
+            </div>
+          </form>
+         </div>
+      </ng-template>
+    </li>
+    <li [ngbNavItem]="7"> 
+      <a ngbNavLink>
+        Tooltips 
+      </a>
+      <ng-template ngbNavContent>
+        <div class="div mt-3">
+          <button type="button" class="btn btn-outline-secondary mr-2" placement="top" ngbTooltip="Tooltip on top">
+            Tooltip on top
+          </button>
+          <button type="button" class="btn btn-outline-secondary mr-2" placement="right" ngbTooltip="Tooltip on right">
+            Tooltip on right
+          </button>
+          <button type="button" class="btn btn-outline-secondary mr-2" placement="bottom" ngbTooltip="Tooltip on bottom">
+            Tooltip on bottom
+          </button>
+          <button type="button" class="btn btn-outline-secondary mr-2" placement="left" ngbTooltip="Tooltip on left">
+            Tooltip on left
+          </button>
+         </div>
+      </ng-template>
+    </li>
+    <li [ngbNavItem]="8"> 
+      <a ngbNavLink>
+        Alerts 
+      </a>
+      <ng-template ngbNavContent>
+        <div class="div mt-3">
+          <p *ngFor="let alert of alerts">
+            <ngb-alert [type]="alert.type" (closed)="close2(alert)">{{ alert.message }}</ngb-alert>
+          </p>
+          <p>
+            <button type="button" class="btn btn-primary" (click)="reset()">Reset</button>
+          </p>
+         </div>
+      </ng-template>
+    </li>
+    <li [ngbNavItem]="9"> 
+      <a ngbNavLink>
+        Dropdown 
+      </a>
+      <ng-template ngbNavContent>
+        <div class="div mt-3">
+          <div ngbDropdown class="d-inline-block">
+            <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>Toggle dropdown</button>
+            <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+              <button ngbDropdownItem>Action - 1</button>
+              <button ngbDropdownItem>Another Action</button>
+              <button ngbDropdownItem>Something else is here</button>
+            </div>         
+        </div>
+         </div>
+      </ng-template>
+    </li>
 
-<div [ngbNavOutlet]="nav" class="mt-2"></div>
+    <li class="nav-item">
+      <a class="nav-link" href (click)="add($event)">...</a>
+    </li>
+  </ul>
 
-<pre>Active: {{ active }}</pre>
+  <div [ngbNavOutlet]="nav" class="mt-2"></div>
+
+  <!-- <pre>Active: {{ active }}</pre> -->
 </div>

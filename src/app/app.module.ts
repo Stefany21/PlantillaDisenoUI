@@ -18,8 +18,7 @@ import { AdminComponent } from './components/admin/admin.component';
     HeaderComponent,
     FooterComponent,
     HomeComponent,
-    AdminComponent,
-   
+    AdminComponent,   
   ],
   imports: [
     BrowserModule,

@@ -1,6 +1,37 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { NgbCarousel, NgbModal, NgbModalConfig, NgbSlideEvent, NgbSlideEventSource } from '@ng-bootstrap/ng-bootstrap';
+import { NgbCarousel, NgbDateStruct, NgbModal, NgbModalConfig, NgbSlideEvent, NgbSlideEventSource } from '@ng-bootstrap/ng-bootstrap';
 
+interface Alert {
+  type: string;
+  message: string;
+}
+
+const ALERTS: Alert[] = [{
+    type: 'success',
+    message: 'This is an success alert',
+  }, {
+    type: 'info',
+    message: 'This is an info alert',
+  }, {
+    type: 'warning',
+    message: 'This is a warning alert',
+  }, {
+    type: 'danger',
+    message: 'This is a danger alert',
+  }, {
+    type: 'primary',
+    message: 'This is a primary alert',
+  }, {
+    type: 'secondary',
+    message: 'This is a secondary alert',
+  }, {
+    type: 'light',
+    message: 'This is a light alert',
+  }, {
+    type: 'dark',
+    message: 'This is a dark alert',
+  }
+];
 @Component({
   selector: 'app-admin',
   templateUrl: './admin.component.html',
@@ -9,6 +40,7 @@ import { NgbCarousel, NgbModal, NgbModalConfig, NgbSlideEvent, NgbSlideEventSour
 export class AdminComponent implements OnInit {
   public isCollapsed = false;
   currentRate = 8;
+  model: NgbDateStruct;
   open(content) {
     this.modalService.open(content);
   }
@@ -29,7 +61,8 @@ export class AdminComponent implements OnInit {
   }
   constructor(config: NgbModalConfig, private modalService: NgbModal) {// customize default values of modals used by this component tree
     config.backdrop = 'static';
-    config.keyboard = false; }
+    config.keyboard = false; 
+    this.reset();}
  
   ngOnInit(): void {
   }
@@ -61,5 +94,14 @@ export class AdminComponent implements OnInit {
     if (this.pauseOnIndicator && !slideEvent.paused && slideEvent.source === NgbSlideEventSource.INDICATOR) {
       this.togglePaused();
     }
+  }
+  alerts: Alert[];
+
+  close2(alert: Alert) {
+    this.alerts.splice(this.alerts.indexOf(alert), 1);
+  }
+
+  reset() {
+    this.alerts = Array.from(ALERTS);
   }
 }
